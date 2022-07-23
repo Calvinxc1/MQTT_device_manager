@@ -13,22 +13,25 @@ Phase 1 of the project will support my monitoring of soil moisture and climate s
 #### Minimum Viable Product Specification
 ##### 1. Manage MQTT broker subscriptions
 The application needs to be able to subscribe/unsubscribe to different MQTT topics that devices are broadcasting on.
+Subscriptions will be automatically handled by the creation/editing/deletion of devices & sensors.
 
 ##### 2. Store MQTT data in a database
 The application must take the incoming data and store it within a database, recoverable with the following relationships:
-Device -> Measure
+Device -> Sensor
 Device relation must include data such as device name, location and status.
-Measure relation must include data such as value and location.
+Sensor relation must include data such as value and location.
 All data with a temporal component must also include some form of timestamp.
 
 ##### 3. Set alert/action thresholds for incoming data
 Any measure coming from a device, or any device status, needs to include triggers that will cause an alert to appear within the application. This alert needs to be configurable in the threshold(s) that trigger it (I.E. moisture on measure X went below Y threshold), as well as the content of the alert.
 
 ##### 4. Subscriptions/Alerts configurable via GUI
-MQTT subscriptions and alerts must be configurable through a GUI.
+Devices, sensors, and alerts must be configurable through a GUI.
 
 #### Design Notes (2022-07-23)
 * My usual Python backend/JavaScript-React frontend should work nicely for this.
-* Either a MariaDB or a SQLite database is probably best, since there's explicit relationships between devices and measures, and I will likely need to update some of the more static information of a device (I.E. its location) on occasion, which a MariaDB would not fare very well with.
+    * With some edits. I'll likely need two seperate back-end containers for this. One to handle the real-time MQTT messages, and another to handle the configuration/API. 
+* Either a MariaDB or a SQLite database is probably best, since there's explicit relationships between devices and sensors, and I will likely need to update some of the more static information of a device (I.E. its location) on occasion, which a MongoDB would not fare very well with.
     * This does mean converting the incoming JSON-formatted MQTT messages into a SQL-compatible structure. This should be easy enough to handle using the same converter approach that I developed with the [New Eden Analytics schemas](https://github.com/Calvinxc1/NEA-Schema/tree/develop).
 * Though ideally I'd like to have alerts pop up on my phone, I'm not ready to tackle mobile app development yet. I'll limit it to the React Webapp.
+* I think auto-handling the MQTT subscriptions is best for now. I can start by having the topic be `{deviceId}/{sensorId}`.

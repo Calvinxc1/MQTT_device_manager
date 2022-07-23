@@ -1,0 +1,383 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "description": "First pass at back-end API schema for the [MQTT Device Manager](https://github.com/Calvinxc1/MQTT_device_manager) app",
+    "version": "0.0.0",
+    "title": "MQTT Device Manager API",
+    "contact": {
+      "email": "jcherry@gmail.com"
+    },
+    "license": {
+      "name": "GNU General Public License v3.0",
+      "url": "https://github.com/Calvinxc1/MQTT_device_manager/blob/main/LICENSE"
+    }
+  },
+  "paths": {
+    "/device": {
+      "get": {
+        "summary": "Returns a listing of devices",
+        "description": "Takes as input filter criteria for devices based on name, status, and location. Returns a listing of such devices. No specified filters would return a complete device listing.\n",
+        "tags": [
+          "Device"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful return of devices"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a new device",
+        "description": "Takes as input a device name and location, and creates a new device for it.\n",
+        "tags": [
+          "Device"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful creation of device record"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      }
+    },
+    "/device/{deviceId}": {
+      "get": {
+        "summary": "Returns specific device information",
+        "description": "Returns a specific device's detailed information by `deviceId`.\n",
+        "tags": [
+          "Device"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/deviceId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful return of device info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      },
+      "put": {
+        "summary": "Edits a specific device",
+        "description": "Edits information on a specific device: name, location, measurement endpoints.\n",
+        "tags": [
+          "Device"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/deviceId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful editing of device info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes a device",
+        "description": "Deletes a specific device's information, including measurement endpoints.\n",
+        "tags": [
+          "Device"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/deviceId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful deletion of device"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      }
+    },
+    "/sensor": {
+      "get": {
+        "summary": "Returns a listing of sensors",
+        "description": "Take input filter criteria for sensors based on name, status, location, attached device. Returns a listing of such sensors. No specified filters would return a complete listing of all sensors.\n",
+        "tags": [
+          "Sensor"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful return of sensors"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a new sensor",
+        "description": "Takes as input a sensor name, location, and attached device, and creates a new sensor for it.\n",
+        "tags": [
+          "Sensor"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful creation of sensor record"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      }
+    },
+    "/sensor/{sensorId}": {
+      "get": {
+        "summary": "Returns specific sensor information",
+        "description": "Returns a specific sensor's detailed information.\n",
+        "tags": [
+          "Sensor"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/sensorId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful return of sensor info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      },
+      "put": {
+        "summary": "Edits a specific device",
+        "description": "Edits information on a specific sensor: name, location, measurement type.\n",
+        "tags": [
+          "Sensor"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/sensorId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful editing of sensor info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes a device",
+        "description": "Deletes a specific sensor record.\n",
+        "tags": [
+          "Sensor"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/sensorId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful deletion of sensor"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      }
+    },
+    "/alert": {
+      "get": {
+        "summary": "Returns a listing of alerts",
+        "description": "Takes as input filter criteria for alerts based on name, device, and sensor. Returns a listing of such alerts. No specified filters would return a complete alerts listing.\n",
+        "tags": [
+          "Alert"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful return of alerts"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a new alert",
+        "description": "Takes as input an alert name, attached sensor, and creates a new alert for it.\n",
+        "tags": [
+          "Alert"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful creation of alert record"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      }
+    },
+    "/alert/{alertId}": {
+      "get": {
+        "summary": "Returns specific alert information",
+        "description": "Returns a specific alert's detailed information.\n",
+        "tags": [
+          "Alert"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/alertId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful return of alert info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      },
+      "put": {
+        "summary": "Edits a specific alert",
+        "description": "Edits information on a specific alert: name, sensor.\n",
+        "tags": [
+          "Alert"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/alertId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful editing of alert info"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes an alert",
+        "description": "Deletes a specific alert's information.\n",
+        "tags": [
+          "Alert"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/alertId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful deletion of alert"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-UserError"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-ServerError"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "deviceId": {
+        "name": "deviceId",
+        "in": "path",
+        "description": "Device ID of a device",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "sensorId": {
+        "name": "sensorId",
+        "in": "path",
+        "description": "Sensor ID of a sensor",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "alertId": {
+        "name": "alertId",
+        "in": "path",
+        "description": "Alert ID of an alert",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "responses": {
+      "400-UserError": {
+        "description": "User-side error in request"
+      },
+      "500-ServerError": {
+        "description": "Server-side error in procesing request"
+      }
+    }
+  }
+}
