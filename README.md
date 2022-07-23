@@ -26,3 +26,9 @@ Any measure coming from a device, or any device status, needs to include trigger
 
 ##### 4. Subscriptions/Alerts configurable via GUI
 MQTT subscriptions and alerts must be configurable through a GUI.
+
+#### Design Notes (2022-07-23)
+* My usual Python backend/JavaScript-React frontend should work nicely for this.
+* Either a MariaDB or a SQLite database is probably best, since there's explicit relationships between devices and measures, and I will likely need to update some of the more static information of a device (I.E. its location) on occasion, which a MariaDB would not fare very well with.
+    * This does mean converting the incoming JSON-formatted MQTT messages into a SQL-compatible structure. This should be easy enough to handle using the same converter approach that I developed with the [New Eden Analytics schemas](https://github.com/Calvinxc1/NEA-Schema/tree/develop).
+* Though ideally I'd like to have alerts pop up on my phone, I'm not ready to tackle mobile app development yet. I'll limit it to the React Webapp.
