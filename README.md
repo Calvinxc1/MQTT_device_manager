@@ -28,7 +28,10 @@ Any measure coming from a device, or any device status, needs to include trigger
 ##### 4. Subscriptions/Alerts configurable via GUI
 Devices, sensors, and alerts must be configurable through a GUI.
 
-#### Design Notes (2022-07-23)
+#### Architecture Diagram
+![Architecture diagram](./architecture.drawio.png "Architecture Diagram")
+
+#### Design Notes
 * My usual Python backend/JavaScript-React frontend should work nicely for this.
     * With some edits. I'll likely need two seperate back-end containers for this. One to handle the real-time MQTT messages, and another to handle the configuration/API. 
 * Either a MariaDB or a SQLite database is probably best, since there's explicit relationships between devices and sensors, and I will likely need to update some of the more static information of a device (I.E. its location) on occasion, which a MongoDB would not fare very well with.
