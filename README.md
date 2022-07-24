@@ -37,4 +37,4 @@ Devices, sensors, and alerts must be configurable through a GUI.
 * Either a MariaDB or a SQLite database is probably best, since there's explicit relationships between devices and sensors, and I will likely need to update some of the more static information of a device (I.E. its location) on occasion, which a MongoDB would not fare very well with.
     * This does mean converting the incoming JSON-formatted MQTT messages into a SQL-compatible structure. This should be easy enough to handle using the same converter approach that I developed with the [New Eden Analytics schemas](https://github.com/Calvinxc1/NEA-Schema/tree/develop).
 * Though ideally I'd like to have alerts pop up on my phone, I'm not ready to tackle mobile app development yet. I'll limit it to the React Webapp.
-* I think auto-handling the MQTT subscriptions is best for now. I can start by having the topic be `{deviceId}/{sensorId}`.
+* I think auto-handling the MQTT subscriptions is best for now. I can start by having the topic be `device/{deviceId}/sensor/{sensorId}`.
