@@ -33,7 +33,7 @@ Devices, sensors, and alerts must be configurable through a GUI.
 
 #### Design Notes
 * My usual Python backend/JavaScript-React frontend should work nicely for this.
-    * With some edits. I'll likely need two seperate back-end containers for this. One to handle the real-time MQTT messages, and another to handle the configuration/API. 
+    * With some edits. I'll likely need two seperate back-end Python containers for this. One to handle the real-time MQTT messages, and another to handle the configuration/API. 
 * Either a MariaDB or a SQLite database is probably best, since there's explicit relationships between devices and sensors, and I will likely need to update some of the more static information of a device (I.E. its location) on occasion, which a MongoDB would not fare very well with.
     * This does mean converting the incoming JSON-formatted MQTT messages into a SQL-compatible structure. This should be easy enough to handle using the same converter approach that I developed with the [New Eden Analytics schemas](https://github.com/Calvinxc1/NEA-Schema/tree/develop).
 * Though ideally I'd like to have alerts pop up on my phone, I'm not ready to tackle mobile app development yet. I'll limit it to the React Webapp.
