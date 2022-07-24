@@ -23,7 +23,7 @@ Sensor relation must include data such as value and location.
 All data with a temporal component must also include some form of timestamp.
 
 ##### 3. Set alert/action thresholds for incoming data
-Any measure coming from a device, or any device status, needs to include triggers that will cause an alert to appear within the application. This alert needs to be configurable in the threshold(s) that trigger it (I.E. moisture on measure X went below Y threshold), as well as the content of the alert.
+Any measure coming from a device, or any device status, needs to include triggers that will cause an alert to appear within the application. This alert needs to be configurable in the threshold(s) that trigger it (I.E. value on sensor X went below Y threshold), as well as the content of the alert.
 
 ##### 4. Subscriptions/Alerts configurable via GUI
 Devices, sensors, and alerts must be configurable through a GUI.

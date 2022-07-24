@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "description": "First pass at back-end API schema for the [MQTT Device Manager](https://github.com/Calvinxc1/MQTT_device_manager) app",
+    "description": "First pass at back-end API schema for the [MQTT Device Manager](https://github.com/Calvinxc1/MQTT_device_manager) app\n",
     "version": "0.0.0",
     "title": "MQTT Device Manager API",
     "contact": {
@@ -17,12 +17,27 @@
       "get": {
         "summary": "Returns a listing of devices",
         "description": "Takes as input filter criteria for devices based on name, status, and location. Returns a listing of such devices. No specified filters would return a complete device listing.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/deviceName"
+          },
+          {
+            "$ref": "#/components/parameters/deviceStatus"
+          }
+        ],
         "tags": [
           "Device"
         ],
         "responses": {
           "200": {
-            "description": "Successful return of devices"
+            "description": "Successful return of devices",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeviceGetResp200"
+                }
+              }
+            }
           },
           "400": {
             "$ref": "#/components/responses/400-UserError"
@@ -38,9 +53,25 @@
         "tags": [
           "Device"
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DevicePostReq"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
-            "description": "Successful creation of device record"
+            "description": "Successful creation of device record",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DevicePostResp200"
+                }
+              }
+            }
           },
           "400": {
             "$ref": "#/components/responses/400-UserError"
@@ -65,7 +96,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful return of device info"
+            "description": "Successful return of device info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeviceGetSpecificResp200"
+                }
+              }
+            }
           },
           "400": {
             "$ref": "#/components/responses/400-UserError"
@@ -185,7 +223,7 @@
         }
       },
       "put": {
-        "summary": "Edits a specific device",
+        "summary": "Edits a specific sensor",
         "description": "Edits information on a specific sensor: name, location, measurement type.\n",
         "tags": [
           "Sensor"
@@ -208,7 +246,7 @@
         }
       },
       "delete": {
-        "summary": "Deletes a device",
+        "summary": "Deletes a sensor",
         "description": "Deletes a specific sensor record.\n",
         "tags": [
           "Sensor"
@@ -349,7 +387,7 @@
         "description": "Device ID of a device",
         "required": true,
         "schema": {
-          "type": "string"
+          "$ref": "#/components/schemas/deviceId"
         }
       },
       "sensorId": {
@@ -358,7 +396,7 @@
         "description": "Sensor ID of a sensor",
         "required": true,
         "schema": {
-          "type": "string"
+          "$ref": "#/components/schemas/sensorId"
         }
       },
       "alertId": {
@@ -367,7 +405,34 @@
         "description": "Alert ID of an alert",
         "required": true,
         "schema": {
+          "$ref": "#/components/schemas/alertId"
+        }
+      },
+      "deviceName": {
+        "name": "deviceName",
+        "in": "query",
+        "description": "Name filter of devices, uses \\*like\\* matching",
+        "required": false,
+        "schema": {
           "type": "string"
+        }
+      },
+      "deviceStatus": {
+        "name": "deviceStatus",
+        "in": "query",
+        "description": "Device status filter",
+        "required": false,
+        "schema": {
+          "$ref": "#/components/schemas/deviceStatus"
+        }
+      },
+      "deviceSensorId": {
+        "name": "sensorId",
+        "in": "query",
+        "description": "Device sensor ID filter",
+        "required": false,
+        "schema": {
+          "$ref": "#/components/schemas/sensorId"
         }
       }
     },
@@ -377,6 +442,138 @@
       },
       "500-ServerError": {
         "description": "Server-side error in procesing request"
+      }
+    },
+    "schemas": {
+      "deviceId": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "deviceName": {
+        "type": "string"
+      },
+      "deviceLocation": {
+        "type": "string"
+      },
+      "deviceStatus": {
+        "type": "string",
+        "enum": [
+          "setup",
+          "active",
+          "lowBattery",
+          "inactive",
+          "disabled"
+        ]
+      },
+      "sensorId": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "alertId": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "DeviceGetResp200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/deviceId"
+          },
+          "name": {
+            "$ref": "#/components/schemas/deviceName"
+          },
+          "location": {
+            "$ref": "#/components/schemas/deviceLocation"
+          },
+          "status": {
+            "$ref": "#/components/schemas/deviceStatus"
+          }
+        },
+        "example": {
+          "id": "352b9755-e7de-4a15-bedc-d6af2eb9c755",
+          "name": "Example Device",
+          "location": "Garden",
+          "status": "Active"
+        }
+      },
+      "DevicePostReq": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/deviceName"
+          },
+          "location": {
+            "$ref": "#/components/schemas/deviceLocation"
+          }
+        },
+        "example": {
+          "name": "Example Device",
+          "location": "Garden"
+        }
+      },
+      "DevicePostResp200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/deviceId"
+          },
+          "name": {
+            "$ref": "#/components/schemas/deviceName"
+          },
+          "location": {
+            "$ref": "#/components/schemas/deviceLocation"
+          }
+        },
+        "example": {
+          "id": "352b9755-e7de-4a15-bedc-d6af2eb9c755",
+          "name": "Example Device",
+          "location": "Garden"
+        }
+      },
+      "DeviceGetSpecificResp200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/deviceId"
+          },
+          "name": {
+            "$ref": "#/components/schemas/deviceName"
+          },
+          "location": {
+            "$ref": "#/components/schemas/deviceLocation"
+          },
+          "status": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "$ref": "#/components/schemas/deviceStatus"
+              },
+              "timestamp": {
+                "type": "integer"
+              }
+            }
+          },
+          "sensors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/sensorId"
+            }
+          }
+        },
+        "example": {
+          "id": "352b9755-e7de-4a15-bedc-d6af2eb9c755",
+          "name": "Example Device",
+          "location": "Garden",
+          "status": {
+            "status": "active",
+            "timestamp": 1647896752
+          },
+          "sensors": [
+            "50eb75f1-a8ab-4057-ac87-016008e2da37",
+            "5bd42985-8655-456a-9b9e-bdc0a30c8e48",
+            "d7023769-6080-4784-9a53-bb7fa79e54e0"
+          ]
+        }
       }
     }
   }
