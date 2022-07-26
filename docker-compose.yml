@@ -5,7 +5,6 @@ services:
         build:
             context: ./
             dockerfile: ./Dockerfile.swagger
-        command: ["swagger-ui-watcher", "--host", "0.0.0.0", "--no-open", "./spec/_root.yml"]
         ports:
         - 8000:8000 ## Remove for deployment
         volumes:
