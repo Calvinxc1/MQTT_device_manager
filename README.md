@@ -29,7 +29,7 @@ Any measure coming from a device, or any device status, needs to include trigger
 Devices, sensors, and alerts must be configurable through a GUI.
 
 #### Architecture
-![Architecture diagram](./architecture.drawio.png "Architecture Diagram")
+![Architecture diagram](./architecture.drawio.png)
 
 The application will be split into four containers. One which runs the front-end UI in JavaScript, one performing ETL on the MQTT messages using Python, one providing the API in Python/Flask, and one running the database using either MariaDB or SQLite.
 
