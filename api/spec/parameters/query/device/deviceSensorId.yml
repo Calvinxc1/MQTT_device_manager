@@ -1,0 +1,6 @@
+name: deviceSensorId
+in: query
+description: Filter devices by attached sensor
+required: false
+schema:
+    $ref: '#/components/schemas/sensorId'

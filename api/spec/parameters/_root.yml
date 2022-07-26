@@ -1,0 +1,22 @@
+## PATH parameters
+alertId:
+    $ref: ./path/alert/alertId.yml
+deviceId:
+    $ref: ./path/device/deviceId.yml
+sensorId:
+    $ref: ./path/sensor/sensorId.yml
+
+## QUERY parameters
+deviceName:
+    $ref: ./query/device/deviceName.yml
+deviceSensorId:
+    $ref: ./query/device/deviceSensorId.yml
+deviceStatus:
+    $ref: ./query/device/deviceStatus.yml
+
+sensorDeviceId:
+    $ref: ./query/sensor/sensorDeviceId.yml
+sensorName:
+    $ref: ./query/sensor/sensorName.yml
+sensorType:
+    $ref: ./query/sensor/sensorType.yml

@@ -1,0 +1,6 @@
+type: string
+enum:
+- humid
+- moist
+- pressure
+- temp

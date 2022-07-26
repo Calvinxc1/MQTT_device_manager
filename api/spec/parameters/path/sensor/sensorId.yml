@@ -1,0 +1,6 @@
+name: sensorId
+in: path
+description: Sensor ID of a sensor
+required: true
+schema:
+    $ref: '#/components/schemas/sensorId'

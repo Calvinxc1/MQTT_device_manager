@@ -1,0 +1,16 @@
+summary: Returns a listing of devices
+description: |
+    Takes as input filter criteria for devices based on name, status, and location. Returns a listing of such devices. No specified filters would return a complete device listing.
+parameters:
+- $ref: '#/components/parameters/deviceName'
+- $ref: '#/components/parameters/deviceStatus'
+- $ref: '#/components/parameters/deviceSensorId'
+responses:
+    200:
+        $ref: '#/components/responses/200-DeviceGetResp'
+    400:
+        $ref: '#/components/responses/400-UserError'
+    500:
+        $ref: '#/components/responses/500-ServerError'
+tags:
+- Device

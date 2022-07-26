@@ -1,0 +1,18 @@
+alertId:
+    $ref: ./alert/alertId.yml
+
+deviceId:
+    $ref: ./device/deviceId.yml
+deviceLocation:
+    $ref: ./device/deviceLocation.yml
+deviceName:
+    $ref: ./device/deviceName.yml
+deviceStatus:
+    $ref: ./device/deviceStatus.yml
+
+sensorId:
+    $ref: ./sensor/sensorId.yml
+sensorName:
+    $ref: ./sensor/sensorName.yml
+sensorType:
+    $ref: ./sensor/sensorType.yml

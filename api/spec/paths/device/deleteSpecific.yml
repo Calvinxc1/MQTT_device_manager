@@ -1,0 +1,14 @@
+summary: Deletes a device
+description: |
+    Deletes a specific device's information, including measurement endpoints.
+tags:
+- Device
+parameters:
+- $ref: '#/components/parameters/deviceId'
+responses:
+    200:
+        $ref: '#/components/responses/200-DeviceDeleteSpecificResp'
+    400:
+        $ref: '#/components/responses/400-UserError'
+    500:
+        $ref: '#/components/responses/500-ServerError'

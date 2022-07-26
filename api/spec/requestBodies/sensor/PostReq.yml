@@ -1,0 +1,15 @@
+content:
+    application/json:
+        schema:
+            type: object
+            properties:
+                name:
+                    $ref: '#/components/schemas/sensorName'
+                type:
+                    $ref: '#/components/schemas/sensorType'
+                device:
+                    $ref: '#/components/schemas/deviceId'
+        example:
+            name: Example Sensor
+            type: moist
+            device: 352b9755-e7de-4a15-bedc-d6af2eb9c755

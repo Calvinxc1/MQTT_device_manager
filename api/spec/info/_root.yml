@@ -1,0 +1,9 @@
+description: |
+    First pass at back-end API schema for the [MQTT Device Manager](https://github.com/Calvinxc1/MQTT_device_manager) app
+version: 0.0.0
+title: MQTT Device Manager API
+contact:
+    email: jcherry@gmail.com
+license:
+    name: GNU General Public License v3.0
+    url: https://github.com/Calvinxc1/MQTT_device_manager/blob/main/LICENSE

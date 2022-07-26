@@ -1,0 +1,6 @@
+name: sensorName
+in: query
+description: Name filter of sensors, uses \*like\* matching
+required: false
+schema:
+    type: string

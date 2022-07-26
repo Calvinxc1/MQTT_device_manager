@@ -1,0 +1,7 @@
+type: string
+enum:
+- setup
+- active
+- lowBattery
+- inactive
+- disabled

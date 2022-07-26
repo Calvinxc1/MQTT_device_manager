@@ -1,0 +1,23 @@
+description: Successful creation of device record
+content:
+    application/json:
+        schema:
+            type: object
+            properties:
+                message:
+                    type: string
+                record:
+                    type: object
+                    properties:
+                        id:
+                            $ref: '#/components/schemas/deviceId'
+                        name:
+                            $ref: '#/components/schemas/deviceName'
+                        location:
+                            $ref: '#/components/schemas/deviceLocation'
+            example:
+                message: Device successfully created
+                record:
+                    id: 352b9755-e7de-4a15-bedc-d6af2eb9c755
+                    name: Example Device
+                    location: Garden

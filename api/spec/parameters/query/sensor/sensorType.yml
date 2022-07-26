@@ -1,0 +1,6 @@
+name: sensorType
+in: query
+description: Filter sensors by type
+required: false
+schema:
+    $ref: '#/components/schemas/sensorType'

@@ -1,0 +1,7 @@
+DevicePostReq:
+    $ref: ./device/PostReq.yml
+DevicePutSpecificReq:
+    $ref: ./device/PutSpecificReq.yml
+
+SensorPostReq:
+    $ref: ./sensor/PostReq.yml

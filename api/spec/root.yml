@@ -1,0 +1,14 @@
+openapi: 3.0.3
+info:
+    $ref: ./info/_root.yml
+paths:
+    $ref: ./paths/_root.yml
+components:
+    parameters:
+        $ref: ./parameters/_root.yml
+    requestBodies:
+        $ref: ./requestBodies/_root.yml
+    responses:
+        $ref: ./responses/_root.yml
+    schemas:
+        $ref: ./schemas/_root.yml

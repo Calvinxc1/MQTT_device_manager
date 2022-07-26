@@ -1,0 +1,21 @@
+200-DeviceGetResp:
+    $ref: ./200/device/GetResp.yml
+200-DevicePostResp:
+    $ref: ./200/device/PostResp.yml
+200-DeviceGetSpecificResp:
+    $ref: ./200/device/GetSpecificResp.yml
+200-DevicePutSpecificResp:
+    $ref: ./200/device/PutSpecificResp.yml
+200-DeviceDeleteSpecificResp:
+    $ref: ./200/device/DeleteSpecificResp.yml
+    
+200-SensorGetResp:
+    $ref: ./200/sensor/GetResp.yml
+200-SensorPostResp:
+    $ref: ./200/sensor/PostResp.yml
+
+400-UserError:
+    $ref: ./400/UserError.yml
+
+500-ServerError:
+    $ref: ./500/ServerError.yml

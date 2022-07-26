@@ -1,0 +1,12 @@
+content:
+    application/json:
+        schema:
+            type: object
+            properties:
+                name:
+                    $ref: '#/components/schemas/deviceName'
+                location:
+                    $ref: '#/components/schemas/deviceLocation'
+        example:
+            name: Example Device
+            location: Garden

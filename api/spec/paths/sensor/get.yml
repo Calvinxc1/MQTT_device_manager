@@ -1,0 +1,16 @@
+summary: Returns a listing of sensors
+description: |
+    Take input filter criteria for sensors based on name, status, location, attached device. Returns a listing of such sensors. No specified filters would return a complete listing of all sensors.
+parameters:
+- $ref: '#/components/parameters/sensorName'
+- $ref: '#/components/parameters/sensorType'
+- $ref: '#/components/parameters/sensorDeviceId'
+responses:
+    200:
+        $ref: '#/components/responses/200-SensorGetResp'
+    400:
+        $ref: '#/components/responses/400-UserError'
+    500:
+        $ref: '#/components/responses/500-ServerError'
+tags:
+- Sensor

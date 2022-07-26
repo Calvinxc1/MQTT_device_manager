@@ -1,0 +1,16 @@
+summary: Edits a specific device
+description: |
+    Edits information on a specific device: name, location, measurement endpoints.
+tags:
+- Device
+parameters:
+- $ref: '#/components/parameters/deviceId'
+requestBody:
+    $ref: '#/components/requestBodies/DevicePutSpecificReq'
+responses:
+    200:
+        $ref: '#/components/responses/200-DevicePutSpecificResp'
+    400:
+        $ref: '#/components/responses/400-UserError'
+    500:
+        $ref: '#/components/responses/500-ServerError'

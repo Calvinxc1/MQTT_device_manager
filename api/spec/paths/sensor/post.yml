@@ -1,0 +1,14 @@
+summary: Creates a new sensor
+description: |
+    Takes as input a sensor name, location, and attached device, and creates a new sensor for it.
+requestBody:
+    $ref: '#/components/requestBodies/SensorPostReq'
+responses:
+    200:
+        $ref: '#/components/responses/200-SensorPostResp'
+    400:
+        $ref: '#/components/responses/400-UserError'
+    500:
+        $ref: '#/components/responses/500-ServerError'
+tags:
+- Sensor

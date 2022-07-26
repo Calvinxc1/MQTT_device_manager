@@ -1,0 +1,6 @@
+name: deviceId
+in: path
+description: Device ID of a device
+required: true
+schema:
+    $ref: '#/components/schemas/deviceId'

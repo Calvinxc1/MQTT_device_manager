@@ -1,0 +1,6 @@
+name: alertId
+in: path
+description: Alert ID of an alert
+required: true
+schema:
+    $ref: '#/components/schemas/alertId'

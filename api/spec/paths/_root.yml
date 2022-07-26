@@ -1,0 +1,41 @@
+/alert:
+    get:
+        $ref: ./alert/get.yml
+    post:
+        $ref: ./alert/post.yml
+
+/alert/{alertId}:
+    get:
+        $ref: ./alert/getSpecific.yml
+    put:
+        $ref: ./alert/putSpecific.yml
+    delete:
+        $ref: ./alert/deleteSpecific.yml
+
+/device:
+    get:
+        $ref: ./device/get.yml
+    post:
+        $ref: ./device/post.yml
+
+/device/{deviceId}:
+    get:
+        $ref: ./device/getSpecific.yml
+    put:
+        $ref: ./device/putSpecific.yml
+    delete:
+        $ref: ./device/deleteSpecific.yml
+
+/sensor:
+    get:
+        $ref: ./sensor/get.yml
+    post:
+        $ref: ./sensor/post.yml
+
+/sensor/{sensorId}:
+    get:
+        $ref: ./sensor/getSpecific.yml
+    put:
+        $ref: ./sensor/putSpecific.yml
+    delete:
+        $ref: ./sensor/deleteSpecific.yml

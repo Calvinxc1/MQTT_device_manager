@@ -1,0 +1,23 @@
+description: Successful return of devices
+content:
+    application/json:
+        schema:
+            type: object
+            properties:
+                id:
+                    $ref: '#/components/schemas/deviceId'
+                name:
+                    $ref: '#/components/schemas/deviceName'
+                location:
+                    $ref: '#/components/schemas/deviceLocation'
+                status:
+                    $ref: '#/components/schemas/deviceStatus'
+            example:
+            - id: 352b9755-e7de-4a15-bedc-d6af2eb9c755
+              name: Example Device
+              location: Garden
+              status: active
+            - id: 365213d0-449e-4ddc-af12-1922a787f1b8
+              name: Example Device 2
+              location: Greenhouse
+              status: inactive

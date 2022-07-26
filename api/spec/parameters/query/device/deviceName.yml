@@ -1,0 +1,6 @@
+name: deviceName
+in: query
+description: Name filter of devices, uses \*like\* matching
+required: false
+schema:
+    type: string
