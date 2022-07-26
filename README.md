@@ -30,9 +30,16 @@ Devices, sensors, and alerts must be configurable through a GUI.
 
 #### Architecture
 ![Architecture diagram](./architecture.drawio.png "Architecture Diagram")
+
 The application will be split into four containers. One which runs the front-end UI in JavaScript, one performing ETL on the MQTT messages using Python, one providing the API in Python/Flask, and one running the database using either MariaDB or SQLite.
 
 The MQTT ETL container will receive MQTT messages from the individual devices, which are relayed by the broker.
+
+The underlying database will need to follow the following Entity Relationship Diagram (ERD):
+
+![ERD Diagram](./erd.drawio.png)
+
+Thankfully the ERD is quite simple here, just containing chaining one-to-many relationships, starting at the Device, and ending at the Alert Conditions.
 
 #### Design Notes
 * My usual Python backend/JavaScript-React frontend should work nicely for this.
