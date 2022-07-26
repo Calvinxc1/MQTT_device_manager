@@ -1,8 +1,6 @@
 summary: Returns specific device information
 description: |
     Returns a specific device's detailed information by `deviceId`.
-tags:
-- Device
 parameters:
 - $ref: '#/components/parameters/deviceId'
 responses:
@@ -12,3 +10,5 @@ responses:
         $ref: '#/components/responses/400-UserError'
     500:
         $ref: '#/components/responses/500-ServerError'
+tags:
+- Device

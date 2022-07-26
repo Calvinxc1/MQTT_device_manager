@@ -1,14 +1,14 @@
 summary: Deletes an alert
 description: |
     Deletes a specific alert's information.
-tags:
-- Alert
 parameters:
 - $ref: '#/components/parameters/alertId'
 responses:
     200:
-        description: Successful deletion of alert
+        $ref: '#/components/responses/200-AlertDeleteSpecificResp'
     400:
         $ref: '#/components/responses/400-UserError'
     500:
         $ref: '#/components/responses/500-ServerError'
+tags:
+- Alert

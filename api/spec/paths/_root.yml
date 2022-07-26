@@ -3,7 +3,6 @@
         $ref: ./alert/get.yml
     post:
         $ref: ./alert/post.yml
-
 /alert/{alertId}:
     get:
         $ref: ./alert/getSpecific.yml
@@ -17,7 +16,6 @@
         $ref: ./device/get.yml
     post:
         $ref: ./device/post.yml
-
 /device/{deviceId}:
     get:
         $ref: ./device/getSpecific.yml
@@ -31,7 +29,6 @@
         $ref: ./sensor/get.yml
     post:
         $ref: ./sensor/post.yml
-
 /sensor/{sensorId}:
     get:
         $ref: ./sensor/getSpecific.yml

@@ -1,0 +1,19 @@
+content:
+    application/json:
+        schema:
+            type: object
+            properties:
+                name:
+                    $ref: '#/components/schemas/alertName'
+                conditions:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/alertCondition'
+                sensor:
+                    $ref: '#/components/schemas/sensorId'
+            example:
+                name: Example Alert
+                conditions:
+                - type: less
+                  value: 0.25
+                sensor: 50eb75f1-a8ab-4057-ac87-016008e2da37

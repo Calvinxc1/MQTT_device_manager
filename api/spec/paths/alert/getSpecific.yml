@@ -1,14 +1,14 @@
 summary: Returns specific alert information
 description: |
     Returns a specific alert's detailed information.
-tags:
-- Alert
 parameters:
 - $ref: '#/components/parameters/alertId'
 responses:
     200:
-        description: Successful return of alert info
+        $ref: '#/components/responses/200-AlertGetSpecificResp'
     400:
         $ref: '#/components/responses/400-UserError'
     500:
         $ref: '#/components/responses/500-ServerError'
+tags:
+- Alert

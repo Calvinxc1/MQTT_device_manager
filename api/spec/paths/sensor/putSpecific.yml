@@ -1,14 +1,16 @@
 summary: Edits a specific sensor
 description: |
     Edits information on a specific sensor: name, location, measurement type.
-tags:
-- Sensor
 parameters:
 - $ref: '#/components/parameters/sensorId'
+requestBody:
+    $ref: '#/components/requestBodies/SensorPutSpecificReq'
 responses:
     200:
-        description: Successful editing of sensor info
+        $ref: '#/components/responses/200-SensorPutSpecificResp'
     400:
         $ref: '#/components/responses/400-UserError'
     500:
         $ref: '#/components/responses/500-ServerError'
+tags:
+- Sensor

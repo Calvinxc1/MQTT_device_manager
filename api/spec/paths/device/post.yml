@@ -1,8 +1,6 @@
 summary: Creates a new device
 description: |
     Takes as input a device name and location, and creates a new device for it.
-tags:
-- Device
 requestBody:
     $ref: '#/components/requestBodies/DevicePostReq'
 responses:
@@ -12,3 +10,5 @@ responses:
         $ref: '#/components/responses/400-UserError'
     500:
         $ref: '#/components/responses/500-ServerError'
+tags:
+- Device

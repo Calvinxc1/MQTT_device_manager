@@ -2,7 +2,7 @@ version: "3"
 
 services:
     swagger-ui:
-        command: ["swagger-ui-watcher", "--host", "0.0.0.0", "--no-open", "./spec/root.yml"]
+        command: ["swagger-ui-watcher", "--host", "0.0.0.0", "--no-open", "./spec/_root.yml"]
         image: swagger-viewer
         ports:
         - 8000:8000

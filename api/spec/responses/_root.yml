@@ -1,3 +1,14 @@
+200-AlertGetResp:
+    $ref: ./200/alert/GetResp.yml
+200-AlertPostResp:
+    $ref: ./200/alert/PostResp.yml
+200-AlertGetSpecificResp:
+    $ref: ./200/alert/GetSpecificResp.yml
+200-AlertPutSpecificResp:
+    $ref: ./200/alert/PutSpecificResp.yml
+200-AlertDeleteSpecificResp:
+    $ref: ./200/alert/DeleteSpecificResp.yml
+
 200-DeviceGetResp:
     $ref: ./200/device/GetResp.yml
 200-DevicePostResp:
@@ -13,6 +24,12 @@
     $ref: ./200/sensor/GetResp.yml
 200-SensorPostResp:
     $ref: ./200/sensor/PostResp.yml
+200-SensorGetSpecificResp:
+    $ref: ./200/sensor/GetSpecificResp.yml
+200-SensorPutSpecificResp:
+    $ref: ./200/sensor/PutSpecificResp.yml
+200-SensorDeleteSpecificResp:
+    $ref: ./200/sensor/DeleteSpecificResp.yml
 
 400-UserError:
     $ref: ./400/UserError.yml

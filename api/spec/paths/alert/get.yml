@@ -1,12 +1,15 @@
 summary: Returns a listing of alerts
 description: |
     Takes as input filter criteria for alerts based on name, device, and sensor. Returns a listing of such alerts. No specified filters would return a complete alerts listing.
-tags:
-- Alert
+parameters:
+- $ref: '#/components/parameters/alertName'
+- $ref: '#/components/parameters/alertSensorId'
 responses:
     200:
-        description: Successful return of alerts
+        $ref: '#/components/responses/200-AlertGetResp'
     400:
         $ref: '#/components/responses/400-UserError'
     500:
         $ref: '#/components/responses/500-ServerError'
+tags:
+- Alert

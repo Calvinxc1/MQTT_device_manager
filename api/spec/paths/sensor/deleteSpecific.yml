@@ -1,14 +1,14 @@
 summary: Deletes a sensor
 description: |
     Deletes a specific sensor record.
-tags:
-- Sensor
 parameters:
 - $ref: '#/components/parameters/sensorId'
 responses:
     200:
-        description: Successful deletion of sensor
+        $ref: '#/components/responses/200-SensorDeleteSpecificResp'
     400:
         $ref: '#/components/responses/400-UserError'
     500:
         $ref: '#/components/responses/500-ServerError'
+tags:
+- Sensor

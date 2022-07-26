@@ -1,12 +1,14 @@
 summary: Creates a new alert
 description: |
     Takes as input an alert name, attached sensor, and creates a new alert for it.
-tags:
-- Alert
+requestBody:
+    $ref: '#/components/requestBodies/AlertPostReq'
 responses:
     200:
-        description: Successful creation of alert record
+        $ref: '#/components/responses/200-AlertPostResp'
     400:
         $ref: '#/components/responses/400-UserError'
     500:
         $ref: '#/components/responses/500-ServerError'
+tags:
+- Alert

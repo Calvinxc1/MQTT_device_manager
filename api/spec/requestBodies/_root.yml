@@ -1,3 +1,8 @@
+AlertPostReq:
+    $ref: ./alert/PostReq.yml
+AlertPutSpecificReq:
+    $ref: ./alert/PutSpecificReq.yml
+
 DevicePostReq:
     $ref: ./device/PostReq.yml
 DevicePutSpecificReq:
@@ -5,3 +10,5 @@ DevicePutSpecificReq:
 
 SensorPostReq:
     $ref: ./sensor/PostReq.yml
+SensorPutSpecificReq:
+    $ref: ./sensor/PutSpecificReq.yml

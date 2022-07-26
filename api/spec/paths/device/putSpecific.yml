@@ -1,8 +1,6 @@
 summary: Edits a specific device
 description: |
     Edits information on a specific device: name, location, measurement endpoints.
-tags:
-- Device
 parameters:
 - $ref: '#/components/parameters/deviceId'
 requestBody:
@@ -14,3 +12,5 @@ responses:
         $ref: '#/components/responses/400-UserError'
     500:
         $ref: '#/components/responses/500-ServerError'
+tags:
+- Device

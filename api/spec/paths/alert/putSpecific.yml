@@ -1,14 +1,16 @@
 summary: Edits a specific alert
 description: |
     Edits information on a specific alert: name, sensor.
-tags:
-- Alert
 parameters:
 - $ref: '#/components/parameters/alertId'
+requestBody:
+    $ref: '#/components/requestBodies/AlertPutSpecificReq'
 responses:
     200:
-        description: Successful editing of alert info
+        $ref: '#/components/responses/200-AlertPutSpecificResp'
     400:
         $ref: '#/components/responses/400-UserError'
     500:
         $ref: '#/components/responses/500-ServerError'
+tags:
+- Alert

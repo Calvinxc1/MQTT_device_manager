@@ -1,0 +1,36 @@
+description: |
+    Successful editing of alert info, response includes a copy of what an updated `GET` request on that alert would contain since updating.
+content:
+    application/json:
+        schema:
+            type: object
+            properties:
+                message:
+                    type: string
+                record:
+                    type: object
+                    properties:
+                        id:
+                            $ref: '#/components/schemas/alertId'
+                        name:
+                            $ref: '#/components/schemas/alertName'
+                        conditions:
+                            type: array
+                            items:
+                                $ref: '#/components/schemas/alertCondition'
+                        sensor:
+                            $ref: '#/components/schemas/sensorId'
+                        status:
+                            $ref: '#/components/schemas/alertStatus'
+            example:
+                message: Alert successfully updated
+                record:
+                    id: 17acc6d4-fdb7-4d43-957c-f70cdca84bd5
+                    name: Example Alert
+                    conditions:
+                    - type: less
+                      value: 0.25
+                    sensor: 50eb75f1-a8ab-4057-ac87-016008e2da37
+                    status:
+                        type: disabled
+                        timestamp: 1647896752

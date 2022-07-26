@@ -1,14 +1,14 @@
 summary: Returns specific sensor information
 description: |
     Returns a specific sensor's detailed information.
-tags:
-- Sensor
 parameters:
 - $ref: '#/components/parameters/sensorId'
 responses:
     200:
-        description: Successful return of sensor info
+        $ref: '#/components/responses/200-SensorGetSpecificResp'
     400:
         $ref: '#/components/responses/400-UserError'
     500:
         $ref: '#/components/responses/500-ServerError'
+tags:
+- Sensor

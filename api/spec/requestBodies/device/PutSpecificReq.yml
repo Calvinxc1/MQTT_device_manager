@@ -7,6 +7,8 @@ content:
                     $ref: '#/components/schemas/deviceName'
                 location:
                     $ref: '#/components/schemas/deviceLocation'
+                status:
+                    $ref: '#/components/schemas/deviceStatusType'
                 sensors:
                     type: array
                     items:
@@ -14,6 +16,7 @@ content:
             example:
                 name: Example Device
                 location: Garden
+                status: active
                 sensors:
                 - 50eb75f1-a8ab-4057-ac87-016008e2da37
                 - 5bd42985-8655-456a-9b9e-bdc0a30c8e48

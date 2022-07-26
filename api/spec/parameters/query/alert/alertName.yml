@@ -1,0 +1,6 @@
+name: alertName
+in: query
+description: Name filter of alerts, uses \*like\* matching
+required: false
+schema:
+    type: string

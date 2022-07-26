@@ -1,0 +1,6 @@
+type: object
+properties:
+    type:
+        $ref: './alertStatusType.yml'
+    timestamp:
+        $ref: '#/components/schemas/timestamp'

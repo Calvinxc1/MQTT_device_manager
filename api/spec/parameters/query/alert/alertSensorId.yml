@@ -1,0 +1,6 @@
+name: alertSensorId
+in: query
+description: Filter alerts by attached sensor
+required: false
+schema:
+    $ref: '#/components/schemas/sensorId'

@@ -11,12 +11,7 @@ content:
                 location:
                     $ref: '#/components/schemas/deviceLocation'
                 status:
-                    type: object
-                    properties:
-                        status:
-                            $ref: '#/components/schemas/deviceStatus'
-                        timestamp:
-                            type: integer
+                    $ref: '#/components/schemas/deviceStatus'
                 sensors:
                     type: array
                     items:
@@ -26,7 +21,7 @@ content:
                 name: Example Device
                 location: Garden
                 status:
-                    status: active
+                    type: active
                     timestamp: 1647896752
                 sensors:
                 - 50eb75f1-a8ab-4057-ac87-016008e2da37

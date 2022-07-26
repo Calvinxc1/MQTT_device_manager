@@ -7,12 +7,17 @@ sensorId:
     $ref: ./path/sensor/sensorId.yml
 
 ## QUERY parameters
+alertName:
+    $ref: ./query/alert/alertName.yml
+alertSensorId:
+    $ref: ./query/alert/alertSensorId.yml
+
 deviceName:
     $ref: ./query/device/deviceName.yml
 deviceSensorId:
     $ref: ./query/device/deviceSensorId.yml
-deviceStatus:
-    $ref: ./query/device/deviceStatus.yml
+deviceStatusType:
+    $ref: ./query/device/deviceStatusType.yml
 
 sensorDeviceId:
     $ref: ./query/sensor/sensorDeviceId.yml
