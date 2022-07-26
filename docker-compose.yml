@@ -1,10 +1,12 @@
-version: "3"
+version: "3.9"
 
 services:
     swagger-ui:
+        build:
+            context: ./
+            dockerfile: ./Dockerfile.swagger
         command: ["swagger-ui-watcher", "--host", "0.0.0.0", "--no-open", "./spec/_root.yml"]
-        image: swagger-viewer
         ports:
-        - 8000:8000
+        - 8000:8000 ## Remove for deployment
         volumes:
-        - ./api/spec:/api/spec
+        - ./api/spec:/api/spec ## Remove for deployment
