@@ -11,6 +11,9 @@ content:
                         $ref: '#/components/schemas/alertCondition'
                 sensor:
                     $ref: '#/components/schemas/sensorId'
+            required:
+            - name
+            - sensor
             example:
                 name: Example Alert
                 conditions:

@@ -9,6 +9,9 @@ content:
                     $ref: '#/components/schemas/sensorType'
                 device:
                     $ref: '#/components/schemas/deviceId'
+            required:
+            - name
+            - device
         example:
             name: Example Sensor
             type: moist

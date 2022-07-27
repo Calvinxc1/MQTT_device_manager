@@ -7,6 +7,8 @@ content:
                     $ref: '#/components/schemas/deviceName'
                 location:
                     $ref: '#/components/schemas/deviceLocation'
+            required:
+            - name
         example:
             name: Example Device
             location: Garden
