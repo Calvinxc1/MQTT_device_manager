@@ -1,4 +1,5 @@
-description: Successful editing of device info, response includes a copy of what an updated `GET` request on that device would contain since updating.
+description: |
+    Successful editing of device info, response includes a copy of what an updated `GET` request on that device would contain since updating.
 content:
     application/json:
         schema:
@@ -18,14 +19,26 @@ content:
                         status:
                             type: object
                             properties:
-                                status:
+                                type:
                                     $ref: '#/components/schemas/deviceStatus'
                                 timestamp:
-                                    type: integer
+                                    $ref: '#/components/schemas/timestamp'
+                            required:
+                            - type
+                            - timestamp
                         sensors:
                             type: array
                             items:
                                 $ref: '#/components/schemas/sensorId'
+                    required:
+                    - id
+                    - name
+                    - location
+                    - status
+                    - sensors
+            required:
+            - message
+            - record
             example:
                 message: Device successfully updated
                 record:
@@ -33,7 +46,7 @@ content:
                     name: Example Device
                     location: Garden
                     status:
-                        status: active
+                        type: active
                         timestamp: 1647896752
                     sensors:
                     - 50eb75f1-a8ab-4057-ac87-016008e2da37

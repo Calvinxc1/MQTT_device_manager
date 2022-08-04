@@ -1,4 +1,5 @@
-description: Successful editing of sensor info, response includes a copy of what an updated `GET` request on that sensor would contain since updating.
+description: |
+    Successful editing of sensor info, response includes a copy of what an updated `GET` request on that sensor would contain since updating.
 content:
     application/json:
         schema:
@@ -17,6 +18,14 @@ content:
                             $ref: '#/components/schemas/sensorType'
                         device:
                             $ref: '#/components/schemas/deviceId'
+                    required:
+                    - id
+                    - name
+                    - type
+                    - device
+            required:
+            - message
+            - record
             example:
                 message: Device successfully updated
                 record:

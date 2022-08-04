@@ -1,13 +1,14 @@
-alertCondition:
-    $ref: ./alert/alertCondition.yml
 alertId:
     $ref: ./alert/alertId.yml
 alertName:
     $ref: ./alert/alertName.yml
 alertStatus:
-    $ref: ./alert/status/_root.yml
-alertStatusType:
-    $ref: ./alert/status/alertStatusType.yml
+    $ref: ./alert/alertStatus.yml
+    
+alertConditionType:
+    $ref: ./alertCondition/alertConditionType.yml
+alertConditionValue:
+    $ref: ./alertCondition/alertConditionValue.yml
 
 deviceId:
     $ref: ./device/deviceId.yml
@@ -16,9 +17,7 @@ deviceLocation:
 deviceName:
     $ref: ./device/deviceName.yml
 deviceStatus:
-    $ref: ./device/status/_root.yml
-deviceStatusType:
-    $ref: ./device/status/deviceStatusType.yml
+    $ref: ./device/deviceStatus.yml
 
 sensorId:
     $ref: ./sensor/sensorId.yml

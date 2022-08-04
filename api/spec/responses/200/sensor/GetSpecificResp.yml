@@ -1,4 +1,5 @@
-description: Successful return of sensor info
+description: |
+    Successful return of sensor info
 content:
     application/json:
         schema:
@@ -12,6 +13,11 @@ content:
                     $ref: '#/components/schemas/sensorType'
                 device:
                     $ref: '#/components/schemas/deviceId'
+            required:
+            - id
+            - name
+            - type
+            - device
             example:
                 id: 50eb75f1-a8ab-4057-ac87-016008e2da37
                 name: Example Sensor

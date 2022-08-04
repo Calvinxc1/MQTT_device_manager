@@ -8,7 +8,15 @@ content:
                 conditions:
                     type: array
                     items:
-                        $ref: '#/components/schemas/alertCondition'
+                        type: object
+                        properties:
+                            type:
+                                $ref: '#/components/schemas/alertConditionType'
+                            value:
+                                $ref: '#/components/schemas/alertConditionValue'
+                        required:
+                        - type
+                        - value
                 sensor:
                     $ref: '#/components/schemas/sensorId'
             required:

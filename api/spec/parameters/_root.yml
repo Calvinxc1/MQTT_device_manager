@@ -16,8 +16,8 @@ deviceName:
     $ref: ./query/device/deviceName.yml
 deviceSensorId:
     $ref: ./query/device/deviceSensorId.yml
-deviceStatusType:
-    $ref: ./query/device/deviceStatusType.yml
+deviceStatus:
+    $ref: ./query/device/deviceStatus.yml
 
 sensorDeviceId:
     $ref: ./query/sensor/sensorDeviceId.yml

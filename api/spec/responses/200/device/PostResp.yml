@@ -1,4 +1,5 @@
-description: Successful creation of device record
+description: |
+    Successful creation of device record
 content:
     application/json:
         schema:
@@ -15,6 +16,13 @@ content:
                             $ref: '#/components/schemas/deviceName'
                         location:
                             $ref: '#/components/schemas/deviceLocation'
+                    required:
+                    - id
+                    - name
+                    - location
+            required:
+            - message
+            - record
             example:
                 message: Device successfully created
                 record:

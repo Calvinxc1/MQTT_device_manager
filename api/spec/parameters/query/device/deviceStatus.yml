@@ -1,0 +1,6 @@
+name: deviceStatus
+in: query
+description: Device status filter
+required: false
+schema:
+    $ref: '#/components/schemas/deviceStatus'

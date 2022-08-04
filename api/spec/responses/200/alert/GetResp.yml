@@ -1,4 +1,5 @@
-description: Successful return of alerts
+description: |
+    Successful return of alerts
 content:
     application/json:
         schema:
@@ -11,7 +12,12 @@ content:
                 sensor:
                     $ref: '#/components/schemas/sensorId'
                 status:
-                    $ref: '#/components/schemas/alertStatusType'
+                    $ref: '#/components/schemas/alertStatus'
+            required:
+            - id
+            - name
+            - sensor
+            - status
             example:
             - id: 17acc6d4-fdb7-4d43-957c-f70cdca84bd5
               name: Example Alert

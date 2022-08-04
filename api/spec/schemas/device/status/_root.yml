@@ -1,6 +1,0 @@
-type: object
-properties:
-    type:
-        $ref: './deviceStatusType.yml'
-    timestamp:
-        $ref: '#/components/schemas/timestamp'

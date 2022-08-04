@@ -4,3 +4,4 @@ enum:
 - moist
 - pressure
 - temp
+nullable: true

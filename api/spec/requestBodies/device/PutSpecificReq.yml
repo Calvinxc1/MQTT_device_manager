@@ -8,7 +8,7 @@ content:
                 location:
                     $ref: '#/components/schemas/deviceLocation'
                 status:
-                    $ref: '#/components/schemas/deviceStatusType'
+                    $ref: '#/components/schemas/deviceStatus'
                 sensors:
                     type: array
                     items:
