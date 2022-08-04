@@ -9,3 +9,11 @@ services:
         - 8000:8000 ## Remove for deployment
         volumes:
         - ./api/spec:/api/spec ## Remove for deployment
+        
+    api:
+        build:
+            context: ./api
+            dockerfile: ./Dockerfile
+        restart: unless-stopped
+        ports:
+        - 8080:8080

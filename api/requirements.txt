@@ -1,0 +1,5 @@
+flask >=2.0, < 3
+flask-restful >= 0.3, < 0.4
+gunicorn >= 20.1, < 21
+openapi-core >= 0.14, < 0.15
+pydantic >= 1.9, < 2
