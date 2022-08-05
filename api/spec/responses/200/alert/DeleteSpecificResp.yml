@@ -29,7 +29,15 @@ content:
                         sensor:
                             $ref: '#/components/schemas/sensorId'
                         status:
-                            $ref: '#/components/schemas/alertStatus'
+                            type: object
+                            properties:
+                                type:
+                                    $ref: '#/components/schemas/alertStatus'
+                                timestamp:
+                                    $ref: '#/components/schemas/timestamp'
+                            required:
+                            - type
+                            - timestamp
                     required:
                     - id
                     - name

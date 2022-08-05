@@ -28,14 +28,11 @@ content:
                                 - value
                         sensor:
                             $ref: '#/components/schemas/sensorId'
-                        status:
-                            $ref: '#/components/schemas/alertStatus'
                     required:
                     - id
                     - name
                     - conditions
                     - sensor
-                    - status
             required:
             - message
             - record
@@ -48,6 +45,3 @@ content:
                     - type: less
                       value: 0.25
                     sensor: 50eb75f1-a8ab-4057-ac87-016008e2da37
-                    status:
-                        type: inactive
-                        timestamp: 1647896752

@@ -1,7 +1,5 @@
-#from .Invocation import Invocation
-#from .Ping import Ping
+from .alert import Alert
 
 resource_map = {
-#    Invocation: ['/invocations'],
-#    Ping: ['/ping'],
+    Alert: ['/alert', '/alert/<alertId>'],
 }
