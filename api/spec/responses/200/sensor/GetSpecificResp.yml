@@ -5,21 +5,27 @@ content:
         schema:
             type: object
             properties:
-                id:
-                    $ref: '#/components/schemas/sensorId'
-                name:
-                    $ref: '#/components/schemas/sensorName'
-                type:
-                    $ref: '#/components/schemas/sensorType'
-                device:
-                    $ref: '#/components/schemas/deviceId'
+                record:
+                    type: object
+                    properties:
+                        id:
+                            $ref: '#/components/schemas/sensorId'
+                        name:
+                            $ref: '#/components/schemas/sensorName'
+                        type:
+                            $ref: '#/components/schemas/sensorType'
+                        device:
+                            $ref: '#/components/schemas/deviceId'
+                    required:
+                    - id
+                    - name
+                    - type
+                    - device
             required:
-            - id
-            - name
-            - type
-            - device
+            - record
             example:
-                id: 50eb75f1-a8ab-4057-ac87-016008e2da37
-                name: Example Sensor
-                type: moist
-                device: 352b9755-e7de-4a15-bedc-d6af2eb9c755
+                record:
+                    id: 50eb75f1-a8ab-4057-ac87-016008e2da37
+                    name: Example Sensor
+                    type: moisture
+                    device: 352b9755-e7de-4a15-bedc-d6af2eb9c755

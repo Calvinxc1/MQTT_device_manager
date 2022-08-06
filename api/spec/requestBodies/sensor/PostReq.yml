@@ -14,5 +14,5 @@ content:
             - device
         example:
             name: Example Sensor
-            type: moist
+            type: moisture
             device: 352b9755-e7de-4a15-bedc-d6af2eb9c755

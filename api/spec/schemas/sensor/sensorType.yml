@@ -1,7 +1,7 @@
 type: string
 enum:
-- humid
-- moist
+- humidity
+- moisture
 - pressure
-- temp
+- temperature
 nullable: true
