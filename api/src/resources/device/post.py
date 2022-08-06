@@ -1,15 +1,9 @@
 placeholder_resp = {
-  "message": "Alert successfully created",
+  "message": "Device successfully created",
   "record": {
-    "id": "17acc6d4-fdb7-4d43-957c-f70cdca84bd5",
-    "name": "Example Alert",
-    "conditions": [
-      {
-        "type": "less",
-        "value": 0.25
-      }
-    ],
-    "sensor": "50eb75f1-a8ab-4057-ac87-016008e2da37"
+    "id": "352b9755-e7de-4a15-bedc-d6af2eb9c755",
+    "name": "Example Device",
+    "location": "Garden"
   }
 }
 

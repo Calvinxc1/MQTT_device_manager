@@ -37,7 +37,7 @@ content:
             - message
             - record
             example:
-                message: Device successfully created
+                message: Alert successfully created
                 record:
                     id: 17acc6d4-fdb7-4d43-957c-f70cdca84bd5
                     name: Example Alert

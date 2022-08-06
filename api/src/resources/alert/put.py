@@ -1,20 +1,13 @@
 placeholder_resp = {
-  "message": "Alert successfully updated",
-  "record": {
-    "id": "17acc6d4-fdb7-4d43-957c-f70cdca84bd5",
-    "name": "Example Alert",
-    "conditions": [
-      {
-        "type": "less",
-        "value": 0.25
-      }
-    ],
-    "sensor": "50eb75f1-a8ab-4057-ac87-016008e2da37",
-    "status": {
-      "type": "disabled",
-      "timestamp": 1647896752
+  "name": "Example Alert",
+  "conditions": [
+    {
+      "type": "less",
+      "value": 0.25
     }
-  }
+  ],
+  "sensor": "50eb75f1-a8ab-4057-ac87-016008e2da37",
+  "status": "disabled"
 }
 
 def put(self, *args, **kwargs):
