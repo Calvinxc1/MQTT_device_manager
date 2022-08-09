@@ -7,13 +7,13 @@ sensor_id = '50eb75f1-a8ab-4057-ac87-016008e2da37'
 body_post = {
   "name": "Example Sensor",
   "type": "moisture",
-  "sensor": "352b9755-e7de-4a15-bedc-d6af2eb9c755"
+  "device": "352b9755-e7de-4a15-bedc-d6af2eb9c755"
 }
 
 body_put = {
   "name": "Example Sensor",
   "type": "moisture",
-  "sensor": "352b9755-e7de-4a15-bedc-d6af2eb9c755"
+  "device": "352b9755-e7de-4a15-bedc-d6af2eb9c755"
 }
 
 def test_sensor_get():
