@@ -11,12 +11,3 @@ class Device(Base):
     location = Column(String)
     status = Column(String)
     status_timestamp = Column(Integer)
-    
-    def __repr__(self):
-        return self._repr(
-            id=self.id,
-            name=self.name,
-            location=self.location,
-            status=self.status,
-            status_timestamp=self.status_timestamp,
-        )

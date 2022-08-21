@@ -3,10 +3,11 @@ from sqlalchemy import (String, Integer)
 
 from .Base import Base
 
-class Sensor(Base):
-    __tablename__ = 'sensor'
+class Alert(Base):
+    __tablename__ = 'alert'
     
     id = Column(String(36), primary_key=True)
     name = Column(String)
-    type = Column(String)
-    device_id = Column(String(36), ForeignKey('device.id'))
+    sensor_id = Column(String(36), ForeignKey('sensor.id'))
+    status = Column(String)
+    status_timestamp = Column(Integer)
